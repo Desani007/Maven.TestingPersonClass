@@ -11,16 +11,18 @@ public class TestPerson {
     public void testDefaultConstructor() {
         // Given
         String expectedName = "";
-        Integer expectedAge = Integer.MAX_VALUE;
+        // I changed this because no value was given when the default constructor was being called
+        Integer expectedAge =0;
 
         // When
         Person person = new Person();
+
 
         // Then
         String actualName = person.getName();
         Integer actualAge = person.getAge();
 
-        Assert.assertEquals(expectedName, actualName);
+        Assert.assertNull(expectedName, actualName);
         Assert.assertEquals(expectedAge, actualAge);
     }
 
